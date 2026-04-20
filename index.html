@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>老爸老媽 日本東北・南北海道 14 天</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light only;
+    --paper: #f4ecdd;
+    --paper-soft: #faf5ea;
+    --ink: #1d1a17;
+    --ink-soft: #332d24;
+    --ink-muted: #5d5343;
+    --line: #d6c9ad;
+    --line-soft: #e8dfc7;
+    --sendai: #2f4a61;
+    --tohoku: #3a5432;
+    --hokkaido: #8e3630;
+    --alert: #a8281c;
+    --gold: #6f5518;
+    --shadow: 0 2px 8px rgba(90, 70, 40, 0.08);
+  }
+
+  html {
+    background-color: #f4ecdd !important;
+    color-scheme: light only;
+    scroll-behavior: smooth;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #f4ecdd !important;
+    color: #1d1a17 !important;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(154, 123, 42, 0.04) 0, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(61, 90, 114, 0.03) 0, transparent 40%);
+    font-family: 'Noto Sans TC', 'Shippori Mincho', sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+  }
+
+  /* Force light mode across all browsers including LINE in-app */
+  @media (prefers-color-scheme: dark) {
+    html, body {
+      background-color: #f4ecdd !important;
+      color: #1d1a17 !important;
+    }
+    .hero, .container, .section, .day, .day-header, .day-body,
+    .pass-card, .alerts, .luggage-list, .phase-divider {
+      background-color: transparent !important;
+    }
+    .hero h1, .section-title, .day-title, .pass-name,
+    .alert-title, .luggage-route, .activity, .stat-num {
+      color: #1d1a17 !important;
+    }
+    .hero-kicker, .day-label, .day-sub, .stat-label,
+    .pass-meta, .activity-note, .hotel {
+      color: #5d5343 !important;
+    }
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 22px 80px;
+    background-color: #f4ecdd;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    text-align: center;
+    padding: 64px 22px 48px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    background-color: #f4ecdd;
+  }
+  .hero::before {
+    content: '旅';
+    position: absolute;
+    top: -60px;
+    right: -20px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 280px;
+    color: rgba(168, 68, 60, 0.05);
+    font-weight: 800;
+    pointer-events: none;
+  }
+  .hero-kicker {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+    font-size: 38px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .hero .subtitle {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    color: var(--hokkaido);
+    margin-bottom: 32px;
+    letter-spacing: 0.1em;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    letter-spacing: 0.15em;
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  .section {
+    margin-top: 56px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-num {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 14px;
+    color: var(--ink-muted);
+    letter-spacing: 0.2em;
+  }
+  .section-title {
+    font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== ALERT CARDS ===== */
+  .alerts {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .alert-card {
+    background: #fdf6eb;
+    border-left: 4px solid var(--alert);
+    padding: 20px 22px;
+    border-radius: 2px;
+    box-shadow: var(--shadow);
+  }
+  .alert-tag {
+    display: inline-block;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--alert);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .alert-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+  .alert-body {
+    color: var(--ink-soft);
+    font-size: 17px;
+  }
+  .alert-body strong { color: var(--ink); }
+
+  /* ===== PASS STRATEGY ===== */
+  .pass-grid {
+    display: grid;
+    gap: 18px;
+  }
+  .pass-card {
+    background: var(--paper-soft);
+    border: 1px solid var(--line);
+    padding: 24px;
+    position: relative;
+  }
+  .pass-card.tohoku { border-top: 4px solid var(--tohoku); }
+  .pass-card.hokkaido { border-top: 4px solid var(--hokkaido); }
+  .pass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .pass-name {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Shippori Mincho', serif;
+  }
+  .pass-price {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--hokkaido);
+    white-space: nowrap;
+  }
+  .pass-meta {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .pass-days {
+    display: flex;
+    gap: 6px;
+    margin: 14px 0;
+    flex-wrap: wrap;
+  }
+  .pass-day-chip {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .pass-day-chip.active.tohoku { background: var(--tohoku); color: #f4ecdd; border-color: var(--tohoku); }
+  .pass-day-chip.active.hokkaido { background: var(--hokkaido); color: #f4ecdd; border-color: var(--hokkaido); }
+  .pass-note {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+  .pass-warning {
+    font-size: 14px;
+    color: var(--alert);
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  /* ===== LUGGAGE SECTION ===== */
+  .luggage-list {
+    list-style: none;
+    counter-reset: luggage;
+  }
+  .luggage-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line-soft);
+    counter-increment: luggage;
+  }
+  .luggage-item:last-child { border-bottom: none; }
+  .luggage-num {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .luggage-num::before { content: counter(luggage, decimal-leading-zero); }
+  .luggage-route {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .luggage-detail {
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .luggage-summary {
+    background: #f0e6cd;
+    padding: 16px 20px;
+    margin-top: 20px;
+    border-left: 3px solid var(--gold);
+    font-size: 16px;
+  }
+
+  /* ===== PHASE DIVIDER ===== */
+  .phase-divider {
+    margin: 64px 0 32px;
+    text-align: center;
+    position: relative;
+  }
+  .phase-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--line);
+  }
+  .phase-label {
+    display: inline-block;
+    position: relative;
+    background: var(--paper);
+    padding: 0 20px;
+    font-family: 'Shippori Mincho', serif;
+    letter-spacing: 0.3em;
+  }
+  .phase-num {
+    font-size: 13px;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .phase-name {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .phase-1 .phase-name { color: var(--sendai); }
+  .phase-2 .phase-name { color: var(--tohoku); }
+  .phase-3 .phase-name { color: var(--hokkaido); }
+
+  /* ===== DAY CARDS ===== */
+  .day {
+    background: var(--paper-soft);
+    border: 1px solid var(--line-soft);
+    border-left: 5px solid var(--sendai);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .day.phase-2 { border-left-color: var(--tohoku); }
+  .day.phase-3 { border-left-color: var(--hokkaido); }
+
+  .day-header {
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .day-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .day-label {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 14px;
+    color: var(--ink-muted);
+    letter-spacing: 0.2em;
+    font-weight: 500;
+  }
+  .day-number {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .day-date {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 15px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+  .day-title {
+    font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+  }
+  .day-sub {
+    font-size: 15px;
+    color: var(--ink-muted);
+  }
+  .pass-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+  }
+  .pass-badge.tohoku { background: var(--tohoku); color: #f4ecdd; }
+  .pass-badge.hokkaido { background: var(--hokkaido); color: #f4ecdd; }
+  .pass-badge.none { background: var(--line); color: var(--ink-soft); }
+
+  .day-body {
+    padding: 20px 24px 24px;
+  }
+
+  /* Timeline */
+  .timeline {
+    list-style: none;
+    position: relative;
+    margin-left: 8px;
+    padding-left: 22px;
+    border-left: 1px dashed var(--line);
+  }
+  .timeline li {
+    position: relative;
+    padding-bottom: 16px;
+  }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 9px;
+    width: 9px;
+    height: 9px;
+    background: var(--paper-soft);
+    border: 2px solid var(--ink-muted);
+    border-radius: 50%;
+  }
+  .day.phase-1 .timeline li::before { border-color: var(--sendai); }
+  .day.phase-2 .timeline li::before { border-color: var(--tohoku); }
+  .day.phase-3 .timeline li::before { border-color: var(--hokkaido); }
+
+  .time {
+    display: inline-block;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    min-width: 52px;
+    margin-right: 8px;
+    letter-spacing: 0.05em;
+  }
+  .activity {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .activity-note {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+    margin-left: 60px;
+  }
+
+  /* Info boxes within days */
+  .tip {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #f5ead2;
+    border-left: 3px solid var(--gold);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .tip-tag {
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .warn {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: #fbe8e3;
+    border-left: 3px solid var(--alert);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .warn-tag {
+    font-weight: 700;
+    color: var(--alert);
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .hotel {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+    font-size: 14px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+  .hotel strong { color: var(--ink-soft); font-weight: 600; }
+
+  .ticket-note {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: #ede4d0;
+    border-left: 3px solid var(--sendai);
+    font-size: 14px;
+    line-height: 1.6;
+    border-radius: 2px;
+  }
+  .day.phase-2 .ticket-note { border-left-color: var(--tohoku); }
+  .day.phase-3 .ticket-note { border-left-color: var(--hokkaido); }
+  .ticket-tag {
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 3px;
+    color: var(--sendai);
+  }
+  .day.phase-2 .ticket-tag { color: var(--tohoku); }
+  .day.phase-3 .ticket-tag { color: var(--hokkaido); }
+
+  /* ===== TICKET STRATEGY TABLE ===== */
+  .strategy-card {
+    background: var(--paper-soft);
+    border: 1px solid var(--line);
+    padding: 22px;
+    margin-bottom: 18px;
+  }
+  .strategy-card h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 19px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .strategy-card .lead {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .strategy-card .price-line {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 20px;
+    color: var(--hokkaido);
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  .strategy-card ul.plain {
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .strategy-card ul.plain li {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--line-soft);
+  }
+  .strategy-card ul.plain li:last-child { border-bottom: none; }
+  .strategy-card ul.plain li::before {
+    content: '▸ ';
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Timeline of actions */
+  .action-timeline {
+    list-style: none;
+    position: relative;
+    padding: 0;
+  }
+  .action-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-when {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--hokkaido);
+    letter-spacing: 0.05em;
+  }
+  .action-what {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .action-what strong { color: var(--ink); }
+
+  /* Per-day ticket grid */
+  .ticket-day-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .ticket-day-row {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--paper-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: 3px;
+    align-items: start;
+    font-size: 15px;
+  }
+  .ticket-day-row.phase-1 { border-left: 4px solid var(--sendai); }
+  .ticket-day-row.phase-2 { border-left: 4px solid var(--tohoku); }
+  .ticket-day-row.phase-3 { border-left: 4px solid var(--hokkaido); }
+  .tday {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .tday strong {
+    display: block;
+    font-size: 20px;
+    color: var(--ink);
+    letter-spacing: 0;
+  }
+  .troute {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .tmethod {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .tlabel {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 4px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    font-weight: 600;
+    align-self: start;
+  }
+  .tlabel.pass { background: var(--tohoku); color: #f4ecdd; }
+  .tlabel.toku { background: var(--hokkaido); color: #f4ecdd; }
+  .tlabel.ic { background: var(--sendai); color: #f4ecdd; }
+  .tlabel.local { background: var(--gold); color: #f4ecdd; }
+  .tlabel.cash { background: #6b5d4a; color: #f4ecdd; }
+
+  /* Senior discount list */
+  .senior-intro {
+    background: #f5ead2;
+    padding: 16px 20px;
+    border-left: 4px solid var(--gold);
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .senior-intro strong { color: var(--ink); }
+  .senior-phrase {
+    display: inline-block;
+    font-family: 'Shippori Mincho', serif;
+    background: #fdf6eb;
+    padding: 4px 10px;
+    margin-top: 4px;
+    font-weight: 600;
+    border: 1px dashed var(--gold);
+    color: var(--gold);
+  }
+  .senior-grid {
+    display: grid;
+    gap: 10px;
+  }
+  .senior-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 14px;
+    align-items: center;
+    padding: 13px 16px;
+    background: var(--paper-soft);
+    border: 1px solid var(--line-soft);
+    border-radius: 2px;
+    font-size: 15px;
+  }
+  .senior-name { font-weight: 600; }
+  .senior-name small {
+    display: block;
+    font-weight: 400;
+    color: var(--ink-muted);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+  .senior-reg {
+    font-family: 'Shippori Mincho', serif;
+    color: var(--ink-muted);
+    text-decoration: line-through;
+    font-size: 14px;
+  }
+  .senior-disc {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    color: var(--hokkaido);
+    font-size: 17px;
+  }
+
+  @media (max-width: 520px) {
+    .action-item { grid-template-columns: 80px 1fr; gap: 12px; }
+    .ticket-day-row { grid-template-columns: 50px 1fr; gap: 10px; }
+    .tlabel { grid-column: 2; justify-self: start; margin-top: 6px; }
+    .senior-row { grid-template-columns: 1fr auto; }
+    .senior-reg { display: none; }
+  }
+
+  /* ===== EMERGENCY INFO ===== */
+  .emergency {
+    background: #2a2622;
+    color: #f4ecdd;
+    padding: 32px 24px;
+    margin-top: 56px;
+    border-radius: 2px;
+  }
+  .emergency h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(244, 236, 221, 0.2);
+  }
+  .emergency-grid {
+    display: grid;
+    gap: 14px;
+  }
+  .emergency-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  .emergency-label {
+    color: #d6c9ad;
+  }
+  .emergency-value {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    color: #f4ecdd;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    color: var(--ink-muted);
+    letter-spacing: 0.3em;
+  }
+  .footer .seal {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 2px solid var(--hokkaido);
+    color: var(--hokkaido);
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 520px) {
+    body { font-size: 17px; }
+    .container { padding: 0 16px 60px; }
+    .hero { padding: 48px 16px 36px; }
+    .hero h1 { font-size: 28px; }
+    .hero .subtitle { font-size: 18px; }
+    .hero-stats { gap: 20px; }
+    .stat-num { font-size: 26px; }
+    .section-title { font-size: 22px; }
+    .day-title { font-size: 20px; }
+    .day-number { font-size: 24px; }
+    .day-header, .day-body { padding: 18px 18px; }
+    .alert-card { padding: 18px; }
+    .alert-title { font-size: 18px; }
+    .pass-card { padding: 20px; }
+    .activity { font-size: 16px; }
+  }
+
+  /* Quick nav */
+  .quick-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(244, 236, 221, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--line-soft);
+    margin-top: 32px;
+  }
+  .quick-nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 22px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .quick-nav a {
+    flex-shrink: 0;
+    padding: 6px 14px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .quick-nav a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .quick-nav a.q-1 { border-color: var(--sendai); color: var(--sendai); }
+  .quick-nav a.q-2 { border-color: var(--tohoku); color: var(--tohoku); }
+  .quick-nav a.q-3 { border-color: var(--hokkaido); color: var(--hokkaido); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-kicker">TOHOKU &nbsp;&middot;&nbsp; SOUTH HOKKAIDO</div>
+  <h1>老爸老媽<br>日本東北・南北海道 14 天</h1>
+  <div class="subtitle">2026.05.07 — 05.20</div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">14</div>
+      <div class="stat-label">天</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label">基地城市</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2</div>
+      <div class="stat-label">張 JR 券</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">段寄行李</div>
+    </div>
+  </div>
+</section>
+
+<nav class="quick-nav">
+  <div class="quick-nav-inner">
+    <a href="#alerts">重要提醒</a>
+    <a href="#passes">車票組合</a>
+    <a href="#actions">購票時程</a>
+    <a href="#tickets">每段攻略</a>
+    <a href="#senior">敬老票</a>
+    <a href="#luggage">行李寄送</a>
+    <a class="q-1" href="#phase1">① 仙台</a>
+    <a class="q-2" href="#phase2">② 盛岡青森</a>
+    <a class="q-3" href="#phase3">③ 南北海道</a>
+    <a href="#emergency">緊急</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ALERTS -->
+<section class="section" id="alerts">
+  <div class="section-header">
+    <div class="section-num">壹</div>
+    <h2 class="section-title">三項務必注意</h2>
+  </div>
+  <div class="alerts">
+
+    <div class="alert-card">
+      <span class="alert-tag">⚠ 最重要</span>
+      <div class="alert-title">金色堂「不是平地」，一定搭計程車上山</div>
+      <div class="alert-body">
+        中尊寺的參道「月見坂」是 <strong>800 公尺、爬升 50 公尺、平均坡度 4.3 度</strong>的上坡杉木路，長輩容易吃力。從平泉駅或一ノ関駅直接搭計程車到「<strong>坂の上駐車場</strong>」，下車走 3 分鐘就到金色堂，全程平路。單趟約 ¥1,500–2,000。
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <span class="alert-tag">⚠ 交通</span>
+      <div class="alert-title">北海道新幹線「不停函館駅」</div>
+      <div class="alert-body">
+        新幹線停的是 <strong>新函館北斗駅</strong>，要再轉「<strong>函館ライナー</strong>」快速電車約 15–20 分才到函館駅。下車後同月台對面轉乘，時間要多抓 30 分。
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <span class="alert-tag">⚠ 溫泉區</span>
+      <div class="alert-title">洞爺駅、登別駅都離溫泉街很遠</div>
+      <div class="alert-body">
+        JR 車站都在山下海邊，溫泉街都在山上：
+        <br>・洞爺駅 ↔ 洞爺湖溫泉：<strong>飯店接駁車</strong>（需預約）或道南巴士 20 分鐘
+        <br>・登別駅 ↔ 登別溫泉：道南巴士 15 分鐘，¥350
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PASSES -->
+<section class="section" id="passes">
+  <div class="section-header">
+    <div class="section-num">貳</div>
+    <h2 class="section-title">車票組合策略</h2>
+  </div>
+
+  <p style="margin-bottom: 20px; color: var(--ink-soft); font-size: 16px;">
+    舊版 Tohoku 專用券已於 3/13 停售。現況下最省的組合：
+  </p>
+
+  <div class="pass-grid">
+
+    <div class="pass-card tohoku">
+      <div class="pass-header">
+        <div>
+          <div class="pass-name">① JR EAST PASS（新版）</div>
+          <div class="pass-meta">5 天連續 · 護照購買 · 2026/3/14 新制</div>
+        </div>
+        <div class="pass-price">¥35,000</div>
+      </div>
+      <div class="pass-days">
+        <span class="pass-day-chip">1</span>
+        <span class="pass-day-chip">2</span>
+        <span class="pass-day-chip">3</span>
+        <span class="pass-day-chip active tohoku">Day 4</span>
+        <span class="pass-day-chip active tohoku">Day 5</span>
+        <span class="pass-day-chip active tohoku">Day 6</span>
+        <span class="pass-day-chip active tohoku">Day 7</span>
+        <span class="pass-day-chip active tohoku">Day 8</span>
+        <span class="pass-day-chip">9</span>
+      </div>
+      <div class="pass-note">
+        <strong>覆蓋：</strong>仙台↔一ノ関・仙台↔盛岡・盛岡↔角館（こまち）・盛岡↔新青森・奧入瀨「みずうみ号」JR 巴士。5 天全用到。
+      </div>
+      <div class="pass-note">
+        <strong>購買：</strong>KKday / Klook / JR 東日本官網「えきねっと」。兌換券有效 3 個月，建議現在就買。
+      </div>
+      <div class="pass-note">
+        <strong>兌換：</strong>Day 4（5/10）早上到仙台駅「JR EAST Travel Service Center」出示護照 + 兌換券換實體 Pass，同時劃位全程新幹線座位。
+      </div>
+    </div>
+
+    <div class="pass-card hokkaido">
+      <div class="pass-header">
+        <div>
+          <div class="pass-name">② えきねっと トクだ値14</div>
+          <div class="pass-meta">北海道段個別買 · 網路早鳥 · 最多省 40%</div>
+        </div>
+        <div class="pass-price">約 ¥14,000</div>
+      </div>
+      <div class="pass-days">
+        <span class="pass-day-chip active hokkaido">Day 10</span>
+        <span class="pass-day-chip active hokkaido">Day 11</span>
+        <span class="pass-day-chip active hokkaido">Day 12</span>
+        <span class="pass-day-chip active hokkaido">Day 13</span>
+        <span class="pass-day-chip active hokkaido">Day 14</span>
+      </div>
+      <div class="pass-note">
+        <strong>適用：</strong>Day 10 北海道新幹線（新青森→新函館北斗）、Day 12 函館→洞爺、Day 14 登別→札幌。乘車日 14 天前 10:00 開賣。
+      </div>
+      <div class="pass-note">
+        <strong>購買：</strong>在 JR 東日本「<a href="https://www.eki-net.com" style="color:var(--hokkaido);">えきねっと</a>」用護照註冊會員 → 預約 → 綁定 Suica 或取 QR Code。
+      </div>
+      <div class="pass-warning">
+        ⚠ 北海道周遊券（¥22,000）算過反而多花約 ¥7,000／人，<strong>不買</strong>。
+      </div>
+    </div>
+
+  </div>
+
+  <div class="senior-intro" style="margin-top: 20px;">
+    <strong>💡 兩人合計預估約 ¥102,000（≈ NT$ 22,000），比買兩張周遊券省約 NT$ 6,500。</strong>
+  </div>
+</section>
+
+<!-- ACTION TIMELINE -->
+<section class="section" id="actions">
+  <div class="section-header">
+    <div class="section-num">參</div>
+    <h2 class="section-title">購票時程表</h2>
+  </div>
+
+  <ol class="action-timeline">
+
+    <li class="action-item">
+      <span class="action-when">現在<br>立刻</span>
+      <div class="action-what">
+        <strong>購買 JR EAST PASS（5 日券）</strong>×2 人 · ¥70,000<br>
+        <small style="color: var(--ink-muted);">KKday / Klook / JR 官網「えきねっと」三擇一。兌換券 e-mail 寄送，列印備用。指定 5/10 啟用日。</small>
+      </div>
+    </li>
+
+    <li class="action-item">
+      <span class="action-when">出發前<br>1 個月</span>
+      <div class="action-what">
+        <strong>註冊えきねっと會員 & 事前受付登記</strong><br>
+        <small style="color: var(--ink-muted);">用長輩護照資料註冊，設定 Day 10、12、14 的新幹線／特急班次「事前受付」——開賣時會自動幫你搶位。</small>
+      </div>
+    </li>
+
+    <li class="action-item">
+      <span class="action-when">4/22 起</span>
+      <div class="action-what">
+        <strong>預約 Day 10 新青森→新函館北斗 トクだ値14</strong><br>
+        <small style="color: var(--ink-muted);">通常 ¥7,850 → 早鳥 約 ¥4,700。售完即收，開賣 10:00 當下要按下預約。</small>
+      </div>
+    </li>
+
+    <li class="action-item">
+      <span class="action-when">4/28 起</span>
+      <div class="action-what">
+        <strong>陸續預約 Day 12、14 特急北斗 トクだ値14</strong><br>
+        <small style="color: var(--ink-muted);">Day 12（5/18）、Day 14（5/20）往前推 14 天分別開賣。Day 13 洞爺→登別車程短，トクだ値 折扣有限，直接 Day 13 當天買也行。</small>
+      </div>
+    </li>
+
+    <li class="action-item">
+      <span class="action-when">5/1–5/6</span>
+      <div class="action-what">
+        <strong>備妥 Suica / IC 卡</strong><br>
+        <small style="color: var(--ink-muted);">可在台灣先買好 Welcome Suica 或到仙台機場買。Day 1–3 仙台市區小額車資、Day 11 函館市電都靠嗶卡進出。</small>
+      </div>
+    </li>
+
+    <li class="action-item">
+      <span class="action-when">5/7<br>出發當天</span>
+      <div class="action-what">
+        <strong>仙台機場即可兌換 JR East Pass</strong><br>
+        <small style="color: var(--ink-muted);">仙台機場有 JR 綠色窗口。抵達後直接兌換，啟用日填 5/10。當下順便把 Day 4–8 所有新幹線座位劃完（免費）。</small>
+      </div>
+    </li>
+
+  </ol>
+</section>
+
+<!-- PER-DAY TICKET GUIDE -->
+<section class="section" id="tickets">
+  <div class="section-header">
+    <div class="section-num">肆</div>
+    <h2 class="section-title">每段交通購票攻略</h2>
+  </div>
+
+  <div class="ticket-day-grid">
+
+    <div class="ticket-day-row phase-1">
+      <div class="tday">Day <strong>1</strong></div>
+      <div>
+        <div class="troute">仙台機場 → 仙台駅</div>
+        <div class="tmethod">直接嗶 Suica 進出。¥660/人。Pass 尚未啟用。</div>
+      </div>
+      <span class="tlabel ic">IC 卡</span>
+    </div>
+
+    <div class="ticket-day-row phase-1">
+      <div class="tday">Day <strong>2</strong></div>
+      <div>
+        <div class="troute">仙台 ↔ 松島海岸</div>
+        <div class="tmethod">仙石線，嗶 Suica。¥420 × 2 = ¥840/人。觀光船另買船票 ¥1,600。</div>
+      </div>
+      <span class="tlabel ic">IC 卡</span>
+    </div>
+
+    <div class="ticket-day-row phase-1">
+      <div class="tday">Day <strong>3</strong></div>
+      <div>
+        <div class="troute">仙台 ↔ 本塩釜</div>
+        <div class="tmethod">仙石線，嗶 Suica。¥330 × 2 = ¥660/人。</div>
+      </div>
+      <span class="tlabel ic">IC 卡</span>
+    </div>
+
+    <div class="ticket-day-row phase-2">
+      <div class="tday">Day <strong>4</strong></div>
+      <div>
+        <div class="troute">仙台 ↔ 一ノ関（はやぶさ往返）</div>
+        <div class="tmethod">Pass 啟用第 1 天。仙台駅綠色窗口劃位（免費）。實體 Pass 給站員檢查走人工改札口。平泉接駁巴士另付現金 ¥200。</div>
+      </div>
+      <span class="tlabel pass">JR Pass</span>
+    </div>
+
+    <div class="ticket-day-row phase-2">
+      <div class="tday">Day <strong>5</strong></div>
+      <div>
+        <div class="troute">仙台 → 盛岡（はやぶさ）</div>
+        <div class="tmethod">Pass 第 2 天。事先劃位（Day 4 可一次劃完）。</div>
+      </div>
+      <span class="tlabel pass">JR Pass</span>
+    </div>
+
+    <div class="ticket-day-row phase-2">
+      <div class="tday">Day <strong>6</strong></div>
+      <div>
+        <div class="troute">盛岡 ↔ 角館（こまち往返）</div>
+        <div class="tmethod">Pass 第 3 天。こまち <strong>全車指定席，一定要劃位</strong>。回程建議不晚於 17:30。</div>
+      </div>
+      <span class="tlabel pass">JR Pass</span>
+    </div>
+
+    <div class="ticket-day-row phase-2">
+      <div class="tday">Day <strong>7</strong></div>
+      <div>
+        <div class="troute">盛岡 → 新青森 → 青森</div>
+        <div class="tmethod">Pass 第 4 天。新幹線劃位 + 奥羽本線普通車不劃位。</div>
+      </div>
+      <span class="tlabel pass">JR Pass</span>
+    </div>
+
+    <div class="ticket-day-row phase-2">
+      <div class="tday">Day <strong>8</strong></div>
+      <div>
+        <div class="troute">青森 ↔ 奧入瀨 JR 巴士「みずうみ号」</div>
+        <div class="tmethod">Pass 第 5 天（最後一天）。<strong>前一天到青森駅綠色窗口或 JR 巴士櫃台預約座位</strong>（免費）。みずうみ号一天只 3 班，座位有限。</div>
+      </div>
+      <span class="tlabel pass">JR Pass</span>
+    </div>
+
+    <div class="ticket-day-row phase-3">
+      <div class="tday">Day <strong>9</strong></div>
+      <div>
+        <div class="troute">青森市內徒步 + A-Factory</div>
+        <div class="tmethod">無 JR 移動。純休息日。</div>
+      </div>
+      <span class="tlabel cash">無</span>
+    </div>
+
+    <div class="ticket-day-row phase-3">
+      <div class="tday">Day <strong>10</strong></div>
+      <div>
+        <div class="troute">新青森 → 新函館北斗 → 函館</div>
+        <div class="tmethod"><strong>北海道新幹線用 トクだ値14</strong>（4/22 起預約，¥4,700/人）。到新青森駅指定席售票機輸入 QR Code 取票，或手機秀 eチケット 嗶 Suica 直接進改札。轉 函館ライナー 用 Suica 嗶進嗶出 ¥440。</div>
+      </div>
+      <span class="tlabel toku">トクだ值</span>
+    </div>
+
+    <div class="ticket-day-row phase-3">
+      <div class="tday">Day <strong>11</strong></div>
+      <div>
+        <div class="troute">函館市內 · 五稜郭 · 函館山</div>
+        <div class="tmethod">函館市電一日券「市電専用一日乘車券」¥600（市電內或函館駅觀光案內所買）。函館山纜車來回 ¥1,800，買敬老票再省。</div>
+      </div>
+      <span class="tlabel local">市電券</span>
+    </div>
+
+    <div class="ticket-day-row phase-3">
+      <div class="tday">Day <strong>12</strong></div>
+      <div>
+        <div class="troute">函館 → 洞爺（特急北斗）</div>
+        <div class="tmethod"><strong>トクだ値14</strong>（5/4 起預約，約 ¥4,500/人）。函館駅指定席券売機取票。洞爺駅下車後搭飯店接駁車或道南巴士到溫泉街。</div>
+      </div>
+      <span class="tlabel toku">トクだ值</span>
+    </div>
+
+    <div class="ticket-day-row phase-3">
+      <div class="tday">Day <strong>13</strong></div>
+      <div>
+        <div class="troute">洞爺 → 登別（特急北斗）</div>
+        <div class="tmethod">短程，トクだ値 折扣有限（約 ¥3,400/人）。直接<strong>當天洞爺駅綠色窗口買票</strong>更彈性。溫泉街↔登別駅 道南巴士 ¥350。</div>
+      </div>
+      <span class="tlabel cash">當天買</span>
+    </div>
+
+    <div class="ticket-day-row phase-3">
+      <div class="tday">Day <strong>14</strong></div>
+      <div>
+        <div class="troute">登別 → 札幌（特急北斗）</div>
+        <div class="tmethod"><strong>トクだ値14</strong>（5/6 起預約，約 ¥3,700/人）。登別駅取票。札幌駅地下街多，下車後跟著「中央改札」走去飯店。</div>
+      </div>
+      <span class="tlabel toku">トクだ值</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- SENIOR DISCOUNT -->
+<section class="section" id="senior">
+  <div class="section-header">
+    <div class="section-num">伍</div>
+    <h2 class="section-title">景點敬老票攻略</h2>
+  </div>
+
+  <div class="senior-intro">
+    <strong>重要：JR 交通票券（周遊券、新幹線票）對外國長輩沒有敬老優惠。</strong>但<strong>景點門票幾乎每家都有 65 歲以上折扣</strong>，只要出示護照就能享。到售票口一律先問這句：
+    <br><br>
+    <span class="senior-phrase">シニア割引ありますか？</span>
+    <span style="font-size: 13px; color: var(--ink-muted); margin-left: 10px;">shinia waribiki arimasuka?</span>
+  </div>
+
+  <div class="senior-grid">
+
+    <div class="senior-row">
+      <div class="senior-name">中尊寺金色堂（拝觀券）
+        <small>Day 4 · 平泉</small>
+      </div>
+      <div class="senior-reg">¥1,000</div>
+      <div class="senior-disc">¥800</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">瑞巖寺
+        <small>Day 2 · 松島（如安排）</small>
+      </div>
+      <div class="senior-reg">¥700</div>
+      <div class="senior-disc">¥400</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">ねぶたの家 ワ・ラッセ
+        <small>Day 7 · 青森</small>
+      </div>
+      <div class="senior-reg">¥620</div>
+      <div class="senior-disc">¥560</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">八甲田丸（青函連絡船博物館）
+        <small>Day 9 · 青森</small>
+      </div>
+      <div class="senior-reg">¥510</div>
+      <div class="senior-disc">¥470</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">五稜郭塔展望
+        <small>Day 11 · 函館</small>
+      </div>
+      <div class="senior-reg">¥1,200</div>
+      <div class="senior-disc">¥1,080</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">函館山纜車來回
+        <small>Day 11 · 函館</small>
+      </div>
+      <div class="senior-reg">¥1,800</div>
+      <div class="senior-disc">約 ¥1,500</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">登別地獄谷（免費）
+        <small>Day 13</small>
+      </div>
+      <div class="senior-reg">免費</div>
+      <div class="senior-disc">免費</div>
+    </div>
+
+    <div class="senior-row">
+      <div class="senior-name">さっぽろテレビ塔展望
+        <small>Day 14 · 札幌</small>
+      </div>
+      <div class="senior-reg">¥1,000</div>
+      <div class="senior-disc">¥900</div>
+    </div>
+
+  </div>
+
+  <div class="senior-intro" style="margin-top: 20px;">
+    兩人全程累積可省 <strong>¥2,000–3,000</strong>。備齊護照影本隨身帶，有些售票口需要看本尊護照才給折扣。
+    <br><br>
+    溫泉旅館不提供敬老票但有其他敬老方案——訂房時可問「シニアプランありますか？」，部分旅館提供無障礙房或敬老餐食。
+  </div>
+</section>
+
+<!-- LUGGAGE -->
+<section class="section" id="luggage">
+  <div class="section-header">
+    <div class="section-num">陸</div>
+    <h2 class="section-title">行李寄送安排</h2>
+  </div>
+
+  <ol class="luggage-list">
+    <li class="luggage-item">
+      <span class="luggage-num"></span>
+      <div>
+        <div class="luggage-route">仙台 → 盛岡飯店</div>
+        <div class="luggage-detail">Day 5 早上寄，當天下午送達。請仙台飯店櫃檯辦理「<strong>ヤマト宅急便</strong>」。</div>
+      </div>
+    </li>
+    <li class="luggage-item">
+      <span class="luggage-num"></span>
+      <div>
+        <div class="luggage-route">盛岡 → 青森飯店</div>
+        <div class="luggage-detail">Day 7 早上寄，當天下午送達。</div>
+      </div>
+    </li>
+    <li class="luggage-item">
+      <span class="luggage-num"></span>
+      <div>
+        <div class="luggage-route">青森 → 函館飯店</div>
+        <div class="luggage-detail">Day 10 早上寄，跨海需 1–2 天，建議 Day 9 先寄，函館飯店代收。</div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="luggage-summary">
+    <strong>每件約 ¥2,500–3,000</strong>，三段共約 ¥7,500–9,000。換來的是長輩不用在月台、電梯、海峽新幹線之間拖大行李——這筆錢值得。一件小行李隨身帶換洗即可。
+  </div>
+</section>
+
+<!-- PHASE 1 -->
+<div class="phase-divider phase-1" id="phase1">
+  <div class="phase-label">
+    <span class="phase-num">第一階段</span>
+    <span class="phase-name">仙台基地</span>
+  </div>
+</div>
+
+<!-- DAY 1 -->
+<article class="day phase-1">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">01</span>
+        <span class="day-date">5/7 &nbsp;週四</span>
+      </div>
+      <span class="day-label">ARRIVAL</span>
+    </div>
+    <div class="day-title">抵達仙台</div>
+    <div class="day-sub">機場入境、輕鬆安頓</div>
+    <span class="pass-badge none">尚未啟用周遊券</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">14:00</span><span class="activity">仙台機場抵達、入境</span></li>
+      <li><span class="time">15:30</span><span class="activity">仙台空港アクセス線 → 仙台駅 <span class="activity-note">約 25 分鐘，單程 ¥660</span></span></li>
+      <li><span class="time">16:30</span><span class="activity">入住飯店（仙台駅西口步行 5 分鐘內）</span></li>
+      <li><span class="time">18:00</span><span class="activity">仙台駅 3 樓「<strong>牛たん通り</strong>」晚餐<span class="activity-note">利久、司、伊達炭火—任一家都好</span></span></li>
+      <li><span class="time">20:00</span><span class="activity">早點休息，緩解時差</span></li>
+    </ul>
+    <div class="hotel"><strong>住宿</strong> · 仙台駅西口飯店</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票</span>
+      機場→市區：抵達後在機場買 Welcome Suica 或兌換 Pass（也可在仙台駅 JR EAST Travel Service Center 兌換）。小額車資全程嗶 Suica 最方便。
+    </div>
+  </div>
+</article>
+
+<!-- DAY 2 -->
+<article class="day phase-1">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">02</span>
+        <span class="day-date">5/8 &nbsp;週五</span>
+      </div>
+      <span class="day-label">MATSUSHIMA</span>
+    </div>
+    <div class="day-title">日本三景・松島</div>
+    <div class="day-sub">坐船賞海、當日來回</div>
+    <span class="pass-badge none">單程票即可</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">10:00</span><span class="activity">JR 仙石線 仙台 → 松島海岸駅<span class="activity-note">約 40 分鐘，¥420</span></span></li>
+      <li><span class="time">11:00</span><span class="activity">松島灣觀光船<span class="activity-note">約 50 分鐘，全程坐船，不需上下岸</span></span></li>
+      <li><span class="time">13:00</span><span class="activity">海鮮午餐（港邊松花堂、壽司三昧）</span></li>
+      <li><span class="time">14:30</span><span class="activity">五大堂、瑞巖寺外圍散步<span class="activity-note">全平路、有長椅可休息</span></span></li>
+      <li><span class="time">16:30</span><span class="activity">松島海岸 → 仙台，晚餐自由</span></li>
+    </ul>
+    <div class="tip">
+      <span class="tip-tag">◎ 建議</span>
+      Day 2 不使用周遊券，單買 JR 票最划算。觀光船可事先網路預約，指定座位避免排隊。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同仙台飯店</div>
+  </div>
+</article>
+
+<!-- DAY 3 -->
+<article class="day phase-1">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">03</span>
+        <span class="day-date">5/9 &nbsp;週六</span>
+      </div>
+      <span class="day-label">SHIOGAMA</span>
+    </div>
+    <div class="day-title">鹽釜魚市場</div>
+    <div class="day-sub">美食 &amp; 神社小旅</div>
+    <span class="pass-badge none">單程票即可</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">09:30</span><span class="activity">JR 仙石線 仙台 → 本塩釜<span class="activity-note">約 35 分鐘</span></span></li>
+      <li><span class="time">10:10</span><span class="activity">步行至鹽釜水產仲卸市場<span class="activity-note">平地約 15 分鐘</span></span></li>
+      <li><span class="time">10:30</span><span class="activity">自選海鮮丼（買券、自己挑配料蓋飯）</span></li>
+      <li><span class="time">12:00</span><span class="activity">鹽釜神社（視體力）<span class="activity-note">正門有 202 階梯，可繞東參道較緩</span></span></li>
+      <li><span class="time">14:30</span><span class="activity">本塩釜 → 仙台，晚餐自由</span></li>
+    </ul>
+    <div class="warn">
+      <span class="warn-tag">! 注意</span>
+      鹽釜神社正門階梯陡峭，腳力不足可搭計程車上山（¥500 內），或改走「東參道」緩坡。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同仙台飯店</div>
+  </div>
+</article>
+
+<!-- DAY 4 -->
+<article class="day phase-1">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">04</span>
+        <span class="day-date">5/10 &nbsp;週日</span>
+      </div>
+      <span class="day-label">HIRAIZUMI · WORLD HERITAGE</span>
+    </div>
+    <div class="day-title">平泉 世界遺產</div>
+    <div class="day-sub">金色堂・一關當日往返</div>
+    <span class="pass-badge tohoku">JR EAST PASS · Day 1</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">09:00</span><span class="activity">はやぶさ 仙台 → 一ノ関<span class="activity-note">約 40 分，全車指定席需劃位</span></span></li>
+      <li><span class="time">10:00</span><span class="activity"><strong>從一ノ関駅直接搭計程車</strong>到「坂の上駐車場」<span class="activity-note">約 20 分鐘，¥3,000 內</span></span></li>
+      <li><span class="time">10:30</span><span class="activity">金色堂、讚衡藏、白山神社<span class="activity-note">全程平地，3 分鐘步行到金色堂</span></span></li>
+      <li><span class="time">12:00</span><span class="activity">寺內「かんざん亭」咖啡午餐</span></li>
+      <li><span class="time">13:30</span><span class="activity">計程車下山 → 一ノ関駅</span></li>
+      <li><span class="time">14:30</span><span class="activity">はやぶさ 一ノ関 → 仙台</span></li>
+    </ul>
+    <div class="warn">
+      <span class="warn-tag">! 最重要</span>
+      <strong>絕對不要走月見坂</strong>！800 公尺上坡杉木路，很多長輩反映下坡傷膝。搭計程車上「坂の上駐車場」是唯一輕鬆路線。
+    </div>
+    <div class="tip">
+      <span class="tip-tag">◎ 體力有餘</span>
+      回一ノ関前可再去毛越寺（平地庭園，世界遺產），從中尊寺搭計程車 10 分鐘。否則直接回一ノ関。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同仙台飯店（最後一晚）</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票 · Pass 啟用日</span>
+      仙台駅綠色窗口出示 Pass 劃位全部新幹線座位（免費）：Day 4 一ノ関往返 + Day 5 盛岡 + Day 6 角館往返 + Day 7 新青森，一次劃完最省事。實體 Pass 要從人工改札口給站員看，不能嗶自動改札。
+    </div>
+  </div>
+</article>
+
+<!-- PHASE 2 -->
+<div class="phase-divider phase-2" id="phase2">
+  <div class="phase-label">
+    <span class="phase-num">第二階段</span>
+    <span class="phase-name">盛岡・青森</span>
+  </div>
+</div>
+
+<!-- DAY 5 -->
+<article class="day phase-2">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">05</span>
+        <span class="day-date">5/11 &nbsp;週一</span>
+      </div>
+      <span class="day-label">MORIOKA</span>
+    </div>
+    <div class="day-title">仙台 → 盛岡</div>
+    <div class="day-sub">北上，入住盛岡</div>
+    <span class="pass-badge tohoku">JR EAST PASS · Day 2</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">08:30</span><span class="activity">飯店櫃檯寄行李到盛岡飯店 <strong>①</strong></span></li>
+      <li><span class="time">10:00</span><span class="activity">はやぶさ 仙台 → 盛岡<span class="activity-note">約 40 分</span></span></li>
+      <li><span class="time">11:30</span><span class="activity">入住盛岡飯店、卸小行李</span></li>
+      <li><span class="time">12:30</span><span class="activity">午餐：盛岡三大麵之一<span class="activity-note">盛岡冷麵 / じゃじゃ麵 / わんこそば</span></span></li>
+      <li><span class="time">14:00</span><span class="activity">開運橋、北上川畔散步<span class="activity-note">全程平坦、風景開闊</span></span></li>
+      <li><span class="time">16:00</span><span class="activity">盛岡城跡公園（石垣遺跡，綠意多）</span></li>
+    </ul>
+    <div class="hotel"><strong>住宿</strong> · 盛岡駅西口或東口飯店</div>
+  </div>
+</article>
+
+<!-- DAY 6 -->
+<article class="day phase-2">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">06</span>
+        <span class="day-date">5/12 &nbsp;週二</span>
+      </div>
+      <span class="day-label">KAKUNODATE · 小京都</span>
+    </div>
+    <div class="day-title">秋田 角館</div>
+    <div class="day-sub">武家屋敷當日往返</div>
+    <span class="pass-badge tohoku">JR EAST PASS · Day 3</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">10:00</span><span class="activity">こまち 盛岡 → 角館<span class="activity-note">45 分鐘，全車指定席需劃位</span></span></li>
+      <li><span class="time">11:00</span><span class="activity">武家屋敷通散策<span class="activity-note">路寬平坦，兩旁老樹新綠</span></span></li>
+      <li><span class="time">12:30</span><span class="activity">午餐：稲庭烏龍麵、きりたんぽ鍋</span></li>
+      <li><span class="time">14:00</span><span class="activity">桧木內川堤沿河散步<span class="activity-note">5 月櫻花已謝，但新綠很美</span></span></li>
+      <li><span class="time">16:30</span><span class="activity">こまち 角館 → 盛岡</span></li>
+    </ul>
+    <div class="warn">
+      <span class="warn-tag">! 班次</span>
+      こまち末班回盛岡約 20:00，<strong>建議不要超過 17:30 的班次</strong>，以免長輩疲倦。事先劃好座位。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同盛岡飯店</div>
+  </div>
+</article>
+
+<!-- DAY 7 -->
+<article class="day phase-2">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">07</span>
+        <span class="day-date">5/13 &nbsp;週三</span>
+      </div>
+      <span class="day-label">AOMORI</span>
+    </div>
+    <div class="day-title">盛岡 → 青森</div>
+    <div class="day-sub">睡魔之家・港區</div>
+    <span class="pass-badge tohoku">JR EAST PASS · Day 4</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">09:30</span><span class="activity">飯店寄行李到青森飯店 <strong>②</strong></span></li>
+      <li><span class="time">11:00</span><span class="activity">はやぶさ 盛岡 → 新青森<span class="activity-note">約 1 小時</span></span></li>
+      <li><span class="time">12:10</span><span class="activity">奥羽本線 新青森 → 青森<span class="activity-note">約 6 分鐘</span></span></li>
+      <li><span class="time">12:30</span><span class="activity">入住青森飯店、午餐</span></li>
+      <li><span class="time">15:00</span><span class="activity">ねぶた之家 ワ・ラッセ<span class="activity-note">青森駅對面，有無障礙電梯</span></span></li>
+      <li><span class="time">17:00</span><span class="activity">青森港邊散步、日落</span></li>
+    </ul>
+    <div class="hotel"><strong>住宿</strong> · 青森駅周邊飯店</div>
+  </div>
+</article>
+
+<!-- DAY 8 -->
+<article class="day phase-2">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">08</span>
+        <span class="day-date">5/14 &nbsp;週四</span>
+      </div>
+      <span class="day-label">OIRASE</span>
+    </div>
+    <div class="day-title">奧入瀨溪流</div>
+    <div class="day-sub">巴士賞景・坐著看瀑布</div>
+    <span class="pass-badge tohoku">JR EAST PASS · Day 5（最後一天）</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">08:10</span><span class="activity">JR 巴士「みずうみ号」青森駅發車<span class="activity-note">第一班最安全，需事先預約</span></span></li>
+      <li><span class="time">11:00</span><span class="activity">銚子大滝下車<span class="activity-note">車程約 2 小時 50 分</span></span></li>
+      <li><span class="time">11:15</span><span class="activity">賞瀑、溪流步道小段散步（量力而為）</span></li>
+      <li><span class="time">12:30</span><span class="activity">搭回程みずうみ号 → 青森駅<span class="activity-note">車程同樣 2 小時多</span></span></li>
+      <li><span class="time">15:30</span><span class="activity">回到青森，早點休息</span></li>
+    </ul>
+    <div class="warn">
+      <span class="warn-tag">! 極重要</span>
+      みずうみ号一天只有 <strong>3 班</strong>（約 8:10 / 9:00 / 14:00，每年微調）。務必事前查準運行日與時刻表，錯過最後一班沒辦法回青森。車上無廁所，依賴沿途停靠點。
+    </div>
+    <div class="tip">
+      <span class="tip-tag">◎ 訂位</span>
+      青森駅發車可事先在「みどりの窓口」預約。JR EAST PASS 此券可直接搭乘免加錢。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同青森飯店</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票 · Pass 最後一天</span>
+      <strong>前一天到青森駅綠色窗口預約みずうみ号巴士座位</strong>（免費，拿 Pass 就能預約）。當天不預約可能上不了車。回程票一起預約避免山上錯過末班。
+    </div>
+  </div>
+</article>
+
+<!-- DAY 9 -->
+<article class="day phase-2">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">09</span>
+        <span class="day-date">5/15 &nbsp;週五</span>
+      </div>
+      <span class="day-label">REST DAY</span>
+    </div>
+    <div class="day-title">青森 港區休閒</div>
+    <div class="day-sub">緩衝日、準備進北海道</div>
+    <span class="pass-badge none">不使用周遊券</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">10:00</span><span class="activity">A-Factory 蘋果工廠<span class="activity-note">蘋果汁吧、伴手禮、青森駅步行 3 分</span></span></li>
+      <li><span class="time">12:00</span><span class="activity">青森魚菜中心「のっけ丼」<span class="activity-note">自選海鮮做自己的蓋飯</span></span></li>
+      <li><span class="time">14:00</span><span class="activity">青森縣觀光物產館 アスパム<span class="activity-note">展望台可眺望陸奧灣</span></span></li>
+      <li><span class="time">15:30</span><span class="activity">下午茶、收拾行李</span></li>
+      <li><span class="time">17:00</span><span class="activity">飯店寄行李到函館飯店 <strong>③</strong><span class="activity-note">跨海峽需 1–2 天，今天先寄</span></span></li>
+    </ul>
+    <div class="tip">
+      <span class="tip-tag">◎ 緩衝意義</span>
+      Day 9 設計為不趕行程的休息日，讓長輩在連續新幹線移動後喘口氣，也方便把大行李提前寄到函館。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同青森飯店</div>
+  </div>
+</article>
+
+<!-- PHASE 3 -->
+<div class="phase-divider phase-3" id="phase3">
+  <div class="phase-label">
+    <span class="phase-num">第三階段</span>
+    <span class="phase-name">南北海道</span>
+  </div>
+</div>
+
+<!-- DAY 10 -->
+<article class="day phase-3">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">10</span>
+        <span class="day-date">5/16 &nbsp;週六</span>
+      </div>
+      <span class="day-label">HAKODATE</span>
+    </div>
+    <div class="day-title">青森 → 函館</div>
+    <div class="day-sub">穿越海底隧道</div>
+    <span class="pass-badge hokkaido">JR HOKKAIDO PASS · Day 1</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">10:30</span><span class="activity">はやぶさ 新青森 → 新函館北斗<span class="activity-note">約 1 小時，<strong>需另買特急券 ¥7,840</strong></span></span></li>
+      <li><span class="time">11:30</span><span class="activity">函館ライナー 新函館北斗 → 函館駅<span class="activity-note">約 20 分，同月台對面轉乘</span></span></li>
+      <li><span class="time">12:00</span><span class="activity">入住函館飯店（先寄到的行李應已抵達）</span></li>
+      <li><span class="time">15:00</span><span class="activity">金森紅磚倉庫、海灣散步<span class="activity-note">全平路，咖啡、伴手禮多</span></span></li>
+      <li><span class="time">18:00</span><span class="activity">晚餐：函館塩ラーメン</span></li>
+    </ul>
+    <div class="warn">
+      <span class="warn-tag">! 關鍵</span>
+      新幹線「<strong>不停函館駅</strong>」！停的是新函館北斗。必須轉函館ライナー。下車指示牌很清楚，同月台對面列車即是。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 函館駅或灣區飯店</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票 · トクだ値14</span>
+      <strong>4/22 起在えきねっと預約本日新幹線票</strong>。開賣 10:00 要秒速按下，否則可能搶不到。拿到後可綁 Suica 直接嗶改札，或在新青森駅指定席售票機輸入 QR Code 取紙票。函館ライナー直接嗶 Suica。
+    </div>
+  </div>
+</article>
+
+<!-- DAY 11 -->
+<article class="day phase-3">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">11</span>
+        <span class="day-date">5/17 &nbsp;週日</span>
+      </div>
+      <span class="day-label">HAKODATE</span>
+    </div>
+    <div class="day-title">函館市內</div>
+    <div class="day-sub">朝市・五稜郭・夜景</div>
+    <span class="pass-badge hokkaido">JR HOKKAIDO PASS · Day 2</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">08:00</span><span class="activity">函館朝市（函館駅旁步行 1 分）<span class="activity-note">海鮮丼、活花枝、試吃攤</span></span></li>
+      <li><span class="time">10:30</span><span class="activity">搭路面電車 → 五稜郭公園前<span class="activity-note">周遊券不含市電，單買一日券 ¥600</span></span></li>
+      <li><span class="time">11:00</span><span class="activity">五稜郭塔、星型公園<span class="activity-note">塔內有電梯</span></span></li>
+      <li><span class="time">14:30</span><span class="activity">元町教會區、八幡坂<span class="activity-note">坡度較大，搭計程車上山再散步下</span></span></li>
+      <li><span class="time">17:00</span><span class="activity">函館山夜景纜車<span class="activity-note">排隊久，建議 17:00 前上山等日落</span></span></li>
+    </ul>
+    <div class="tip">
+      <span class="tip-tag">◎ 函館山纜車</span>
+      5 月日落約 18:30，上山看「Magic Hour」最美。排隊人多，週末建議購票後提早 30 分鐘到。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 同函館飯店</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票</span>
+      函館駅觀光案內所或上電車時跟司機買「市電專用一日乘車券 ¥600」。一天內市電無限次搭。纜車下山人多可改搭計程車下坡（¥1,500 內）。
+    </div>
+  </div>
+</article>
+
+<!-- DAY 12 -->
+<article class="day phase-3">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">12</span>
+        <span class="day-date">5/18 &nbsp;週一</span>
+      </div>
+      <span class="day-label">LAKE TOYA</span>
+    </div>
+    <div class="day-title">函館 → 洞爺湖</div>
+    <div class="day-sub">湖畔溫泉、放空</div>
+    <span class="pass-badge hokkaido">JR HOKKAIDO PASS · Day 3</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">09:00</span><span class="activity">飯店寄行李到洞爺湖溫泉飯店</span></li>
+      <li><span class="time">11:00</span><span class="activity">特急「北斗」函館 → 洞爺<span class="activity-note">約 1 小時 45 分，全車指定席</span></span></li>
+      <li><span class="time">12:45</span><span class="activity">抵達洞爺駅</span></li>
+      <li><span class="time">13:00</span><span class="activity"><strong>飯店接駁車</strong>或道南巴士到洞爺湖溫泉<span class="activity-note">車程 20 分鐘，巴士 ¥340</span></span></li>
+      <li><span class="time">14:00</span><span class="activity">入住飯店、泡湯、看湖</span></li>
+      <li><span class="time">20:45</span><span class="activity">洞爺湖花火大會<span class="activity-note">4/28–10/31 每晚，飯店房間可看</span></span></li>
+    </ul>
+    <div class="warn">
+      <span class="warn-tag">! 關鍵</span>
+      <strong>洞爺駅 ≠ 洞爺湖溫泉</strong>。訂房時<strong>一定要問清楚飯店接駁車</strong>時間、接駁點（通常在駅前），事先預約。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 洞爺湖溫泉（東武、乃之風、萬世閣）</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票 · トクだ値14</span>
+      <strong>5/4 起預約本日函館→洞爺特急票</strong>。到函館駅指定席售票機用えきねっと QR Code 取票，或綁 Suica 直接進改札。飯店接駁車記得<strong>訂房時一併預約</strong>。
+    </div>
+  </div>
+</article>
+
+<!-- DAY 13 -->
+<article class="day phase-3">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">13</span>
+        <span class="day-date">5/19 &nbsp;週二</span>
+      </div>
+      <span class="day-label">NOBORIBETSU</span>
+    </div>
+    <div class="day-title">洞爺 → 登別</div>
+    <div class="day-sub">地獄谷・溫泉街</div>
+    <span class="pass-badge hokkaido">JR HOKKAIDO PASS · Day 4</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">09:00</span><span class="activity">洞爺湖晨間散步、拍照</span></li>
+      <li><span class="time">11:00</span><span class="activity">飯店接駁車 → 洞爺駅</span></li>
+      <li><span class="time">11:30</span><span class="activity">特急「北斗」洞爺 → 登別<span class="activity-note">約 50 分鐘</span></span></li>
+      <li><span class="time">12:30</span><span class="activity">登別駅 → 登別溫泉 道南巴士<span class="activity-note">約 15 分鐘，¥350</span></span></li>
+      <li><span class="time">14:00</span><span class="activity">登別地獄谷（飯店附近，步行平路）</span></li>
+      <li><span class="time">16:00</span><span class="activity">閻魔堂、溫泉街散步</span></li>
+    </ul>
+    <div class="tip">
+      <span class="tip-tag">◎ 推薦</span>
+      登別地獄谷有平緩木棧道繞行，長輩可輕鬆走完半圈。傍晚回飯店泡湯最舒服。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 登別溫泉（第一滝本館、萬世閣、瀧乃家）</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票 · 當天買</span>
+      洞爺→登別車程短（50 分），トクだ値 折扣有限，建議<strong>當天洞爺駅綠色窗口直接買票</strong>（¥3,770）更彈性，遇到飯店接駁車時間晚也好調整。
+    </div>
+  </div>
+</article>
+
+<!-- DAY 14 -->
+<article class="day phase-3">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <span class="day-number">14</span>
+        <span class="day-date">5/20 &nbsp;週三</span>
+      </div>
+      <span class="day-label">SAPPORO · 終點</span>
+    </div>
+    <div class="day-title">登別 → 札幌</div>
+    <div class="day-sub">大通公園、電視塔</div>
+    <span class="pass-badge hokkaido">JR HOKKAIDO PASS · Day 5</span>
+  </div>
+  <div class="day-body">
+    <ul class="timeline">
+      <li><span class="time">10:00</span><span class="activity">登別溫泉 → 登別駅 巴士<span class="activity-note">帶行李可叫計程車 ¥2,000</span></span></li>
+      <li><span class="time">11:00</span><span class="activity">特急「北斗」登別 → 札幌<span class="activity-note">約 1 小時 10 分</span></span></li>
+      <li><span class="time">12:15</span><span class="activity">抵達札幌駅、入住飯店</span></li>
+      <li><span class="time">14:00</span><span class="activity">大通公園坐著休息、賞電視塔<span class="activity-note">5 月丁香花（Lilac）季</span></span></li>
+      <li><span class="time">18:00</span><span class="activity">札幌拉麵 / 湯咖哩 告別晚餐</span></li>
+    </ul>
+    <div class="tip">
+      <span class="tip-tag">◎ 後續</span>
+      返程從新千歲機場走？札幌駅 → 新千歲空港 JR 快速エアポート 35–40 分鐘。Day 15 早上出發機場綽綽有餘。
+    </div>
+    <div class="hotel"><strong>住宿</strong> · 札幌駅或大通周邊飯店</div>
+    <div class="ticket-note">
+      <span class="ticket-tag">◎ 購票 · トクだ値14</span>
+      <strong>5/6 起預約本日登別→札幌特急票</strong>（約 ¥3,700/人）。登別駅取票。新千歲機場回程建議先把機場接駁 JR「快速エアポート」座位指定券買好（¥840 額外費用）。
+    </div>
+  </div>
+</article>
+
+<!-- EMERGENCY -->
+<section class="emergency" id="emergency">
+  <h3>緊急 &amp; 實用資訊</h3>
+  <div class="emergency-grid">
+    <div class="emergency-item">
+      <span class="emergency-label">日本警察</span>
+      <span class="emergency-value">110</span>
+    </div>
+    <div class="emergency-item">
+      <span class="emergency-label">救護・消防</span>
+      <span class="emergency-value">119</span>
+    </div>
+    <div class="emergency-item">
+      <span class="emergency-label">台灣駐日代表處急難</span>
+      <span class="emergency-value">+81-80-6557-8796</span>
+    </div>
+    <div class="emergency-item">
+      <span class="emergency-label">台灣駐札幌分處</span>
+      <span class="emergency-value">+81-11-222-2930</span>
+    </div>
+    <div class="emergency-item">
+      <span class="emergency-label">日本旅遊諮詢熱線</span>
+      <span class="emergency-value">050-3816-2787</span>
+    </div>
+    <div class="emergency-item">
+      <span class="emergency-label">信用卡失竊（遠東）</span>
+      <span class="emergency-value">+886-2-7750-0666</span>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="seal">一路平安</div>
+  <div>2026 春 · 東北 南北海道</div>
+</div>
+
+</div>
+
+</body>
+</html>
